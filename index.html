@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Achados &amp; Perdidos | IFRN Lajes
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="nav-wrap">
+   <nav class="nav">
+    <a class="brand" href="/">
+     <span class="brand-mark">
+      IF
+     </span>
+     <span>
+      <b>
+       Achados &amp; Perdidos
+      </b>
+      <small>
+       IFRN · Campus Lajes
+      </small>
+     </span>
+    </a>
+    <div class="nav-links">
+     <a href="#inicio">
+      Início
+     </a>
+     <a href="#anuncios">
+      Encontrar item
+     </a>
+     <a href="#sobre">
+      Como funciona
+     </a>
+    </div>
+    <div class="nav-user" id="nav-user">
+     <button class="btn outline" data-open-login="">
+      Entrar
+     </button>
+    </div>
+   </nav>
+  </header>
+  <div class="app-layout">
+   <aside class="dashboard-sidebar" hidden="" id="dashboard-sidebar">
+    <div class="side-title">
+     MEU PAINEL
+    </div>
+    <button class="side-link active" data-page="search">
+     ⌕
+     <span>
+      Pesquisar itens
+     </span>
+    </button>
+    <button class="side-link" data-can-create="" data-page="create">
+     ＋
+     <span>
+      Cadastrar item
+     </span>
+    </button>
+    <button class="side-link" data-page="categories" hidden="" id="categories-nav">
+     ▦
+     <span>
+      Gerenciar categorias
+     </span>
+    </button>
+    <button class="side-link" data-page="accounts" hidden="" id="accounts-nav">
+     ♙
+     <span>
+      Gerenciar contas
+     </span>
+    </button>
+    <button class="side-link" data-page="mine">
+     ▤
+     <span>
+      Meus anúncios
+     </span>
+    </button>
+   </aside>
+   <div class="app-content">
+    <section class="hero" id="inicio">
+     <div class="hero-inner">
+      <div>
+       <span class="eyebrow">
+        🏛️ Instituto Federal Campus Lajes
+       </span>
+       <h1>
+        Perdeu algo?
+        <br/>
+        <em>
+         Vamos encontrar!
+        </em>
+       </h1>
+       <p>
+        Um espaço para a comunidade do IFRN Campus Lajes compartilhar objetos perdidos e encontrados. Às vezes, tudo o que falta é uma conexão.
+       </p>
+       <div class="hero-actions">
+        <a class="btn primary" href="#anuncios">
+         🔍 Procurar um item
+        </a>
+        <button class="btn outline" data-open-item="">
+         ➕ Anunciar objeto
+        </button>
+       </div>
+      </div>
+      <div class="hero-visual">
+       <div class="preview">
+        <div class="preview-head">
+         <b>
+          Atividade recente
+         </b>
+         <span>
+          ● Comunidade
+         </span>
+        </div>
+        <div class="preview-row">
+         <i>
+          🎧
+         </i>
+         <span>
+          <b>
+           Fone de ouvido
+          </b>
+          <small>
+           Encontrado · Biblioteca
+          </small>
+         </span>
+        </div>
+        <div class="preview-row">
+         <i>
+          📒
+         </i>
+         <span>
+          <b>
+           Caderno azul
+          </b>
+          <small>
+           Encontrado · Sala 04
+          </small>
+         </span>
+        </div>
+        <div class="preview-row">
+         <i>
+          🔑
+         </i>
+         <span>
+          <b>
+           Chaveiro com chaves
+          </b>
+          <small>
+           Perdido · Área de convivência
+          </small>
+         </span>
+        </div>
+       </div>
+       <div class="float-note">
+        ✨
+        <b>
+         Um objeto encontrado
+        </b>
+        <br/>
+        pode voltar ao seu dono!
+       </div>
+      </div>
+     </div>
+    </section>
+    <main class="main" id="anuncios">
+     <div class="dashboard-heading" hidden="" id="dashboard-heading">
+      <span class="kicker">
+       Painel do usuário
+      </span>
+      <h1 id="page-title">
+       Pesquisar itens
+      </h1>
+      <p id="page-subtitle">
+       Encontre objetos perdidos e encontrados no campus.
+      </p>
+     </div>
+     <div class="my-items-head" hidden="" id="my-items-head">
+      <h2>
+       Meus anúncios
+      </h2>
+      <p>
+       Veja os objetos que você cadastrou.
+      </p>
+     </div>
+     <div class="section-head">
+      <div>
+       <span class="kicker">
+        Mural da comunidade
+       </span>
+       <h2>
+        Itens anunciados
+       </h2>
+       <p>
+        Confira os objetos perdidos e encontrados no campus.
+       </p>
+      </div>
+      <div class="delivered">
+       <strong id="delivered-count">
+        0
+       </strong>
+       <span>
+        objetos entregues
+       </span>
+      </div>
+     </div>
+     <section class="categories-panel" hidden="" id="categories-panel">
+      <div class="category-heading">
+       <h2>
+        Gerenciar categorias
+       </h2>
+       <p>
+        Somente servidores e administradores podem criar ou excluir categorias.
+       </p>
+      </div>
+      <form class="category-form" id="category-form">
+       <label for="new-category">
+        Nome da nova categoria
+       </label>
+       <div class="search-line">
+        <input id="new-category" maxlength="60" minlength="2" name="nome" placeholder="Ex.: Garrafas e copos" required=""/>
+        <button class="btn primary" type="submit">
+         Criar categoria
+        </button>
+       </div>
+      </form>
+      <div class="categories-list" id="categories-list">
+      </div>
+      <p class="category-help">
+       Categorias utilizadas em anúncios não podem ser excluídas. Altere primeiro a categoria desses anúncios.
+      </p>
+     </section>
+     <section class="accounts-panel" hidden="" id="accounts-panel">
+      <div class="category-heading">
+       <h2>
+        Gerenciar contas
+       </h2>
+       <p>
+        Consulte, edite ou exclua contas cadastradas. Senhas nunca são exibidas.
+       </p>
+      </div>
+      <div class="accounts-table-wrap">
+       <table class="accounts-table">
+        <thead>
+         <tr>
+          <th>
+           Nome
+          </th>
+          <th>
+           Matrícula
+          </th>
+          <th>
+           Telefone
+          </th>
+          <th>
+           Cargo
+          </th>
+          <th>
+           Ações
+          </th>
+         </tr>
+        </thead>
+        <tbody id="accounts-list">
+         <tr>
+          <td colspan="5">
+           Carregando...
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </section>
+     <div class="search-panel" id="search-panel">
+      <h3>
+       Pesquisar objetos
+      </h3>
+      <p>
+       Use os filtros abaixo para encontrar o que procura.
+      </p>
+      <div class="search-line">
+       <input id="search" placeholder="⌕  Digite o nome do objeto ou uma palavra-chave..."/>
+       <button class="btn search-button" id="search-btn">
+        Buscar
+       </button>
+      </div>
+      <div class="filter-grid">
+       <label>
+        Categoria
+        <select id="category">
+         <option value="">
+          Todas
+         </option>
+        </select>
+       </label>
+       <label>
+        Status
+        <select id="status-filter">
+         <option value="">
+          Todos
+         </option>
+         <option value="aberto">
+          Disponível / Em aberto
+         </option>
+         <option value="entregue">
+          Entregue
+         </option>
+        </select>
+       </label>
+       <label>
+        Data
+        <select id="date-filter">
+         <option value="">
+          Todas
+         </option>
+         <option value="7">
+          Últimos 7 dias
+         </option>
+         <option value="30">
+          Últimos 30 dias
+         </option>
+         <option value="90">
+          Últimos 90 dias
+         </option>
+        </select>
+       </label>
+      </div>
+      <div class="type-filter">
+       <label>
+        Tipo de anúncio
+        <select id="type">
+         <option value="">
+          Todos
+         </option>
+         <option value="perdido">
+          Perdidos
+         </option>
+         <option value="encontrado">
+          Encontrados
+         </option>
+        </select>
+       </label>
+      </div>
+     </div>
+     <div class="items-grid" id="items">
+      <div class="empty">
+       Carregando anúncios...
+      </div>
+     </div>
+    </main>
+    <footer class="site-footer">
+     <div class="footer-inner">
+      <div class="footer-brand">
+       <strong>
+        Achados &amp; Perdidos · IFRN Lajes
+       </strong>
+       <span>
+        Um projeto feito para a comunidade do campus.
+       </span>
+      </div>
+      <div class="footer-creators">
+       <strong>
+        Criadores do projeto
+       </strong>
+       <nav aria-label="Instagram dos criadores" class="creator-links">
+        <a aria-label="Instagram de @ismaelaql" href="https://www.instagram.com/ismaelaql/" rel="noopener noreferrer" target="_blank">
+         ◎ @ismaelaql
+        </a>
+        <a aria-label="Instagram de @joana_isabellee" href="https://www.instagram.com/joana_isabellee/" rel="noopener noreferrer" target="_blank">
+         ◎ @joana_isabellee
+        </a>
+        <a aria-label="Instagram de @brunin084" href="https://www.instagram.com/brunin084/" rel="noopener noreferrer" target="_blank">
+         ◎ @brunin084
+        </a>
+        <a aria-label="Instagram de @beatriz_caeira" href="https://www.instagram.com/beatriz_caeira/" rel="noopener noreferrer" target="_blank">
+         ◎ @beatriz_caeira
+        </a>
+       </nav>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div aria-live="polite" class="overlay" id="loading">
+   <img alt="Carregando" src="https://media.tenor.com/Ez8G-p1fYLMAAAAm/emote-dog.webp"/>
+   <span id="loading-message">
+    Carregando...
+   </span>
+  </div>
+  <div class="modal-backdrop" id="login-modal">
+   <section class="modal">
+    <button class="x" data-close="">
+     ×
+    </button>
+    <span class="brand-mark">
+     IF
+    </span>
+    <h2>
+     Boas-vindas!
+    </h2>
+    <p>
+     Entre com sua matrícula institucional para acessar a plataforma.
+    </p>
+    <form id="login-form">
+     <label>
+      Matrícula
+     </label>
+     <input autocomplete="username" name="matricula" placeholder="Digite sua matrícula" required=""/>
+     <label>
+      Senha
+     </label>
+     <input autocomplete="current-password" name="senha" placeholder="Digite sua senha" required="" type="password"/>
+     <button class="btn primary full" type="submit">
+      Entrar na plataforma
+     </button>
+    </form>
+    <p class="hint">
+     Ainda não tem conta?
+     <button class="auth-link" data-open-register="" type="button">
+      Criar conta
+     </button>
+    </p>
+   </section>
+  </div>
+  <div class="modal-backdrop" id="register-modal">
+   <section class="modal">
+    <button aria-label="Fechar" class="x" data-close="">
+     ×
+    </button>
+    <span class="brand-mark">
+     IF
+    </span>
+    <h2>
+     Criar conta
+    </h2>
+    <p>
+     Cadastre-se para anunciar objetos perdidos e encontrados.
+    </p>
+    <form id="register-form">
+     <label for="register-name">
+      Nome completo
+     </label>
+     <input autocomplete="name" id="register-name" maxlength="120" minlength="3" name="nome" placeholder="Digite seu nome completo" required=""/>
+     <label for="register-matricula">
+      Matrícula
+     </label>
+     <input autocomplete="username" id="register-matricula" inputmode="numeric" maxlength="20" name="matricula" pattern="[0-9]{5,20}" placeholder="Digite sua matrícula" required=""/>
+     <label for="register-phone">
+      WhatsApp para contato (com DDD)
+     </label>
+     <input autocomplete="tel-national" id="register-phone" inputmode="tel" name="telefone" placeholder="Ex.: (84) 99999-9999" required="" type="tel"/>
+     <p class="field-help">
+      Seu número será usado para contato nos anúncios que você publicar.
+     </p>
+     <label for="register-password">
+      Senha
+     </label>
+     <input autocomplete="new-password" id="register-password" minlength="8" name="senha" placeholder="Mínimo de 8 caracteres" required="" type="password"/>
+     <button class="btn primary full" type="submit">
+      Criar minha conta
+     </button>
+    </form>
+    <p class="hint">
+     Já tem conta?
+     <button class="auth-link" data-open-login="" type="button">
+      Entrar
+     </button>
+    </p>
+   </section>
+  </div>
+  <div class="modal-backdrop" id="profile-modal">
+   <section class="modal">
+    <button aria-label="Fechar" class="x" data-close="">
+     ×
+    </button>
+    <h2>
+     Editar perfil
+    </h2>
+    <p>
+     Atualize seu WhatsApp ou altere sua senha de acesso.
+    </p>
+    <form id="profile-form">
+     <label for="profile-phone">
+      WhatsApp com DDD
+     </label>
+     <input autocomplete="tel-national" id="profile-phone" inputmode="tel" name="telefone" placeholder="(84) 99999-9999" required="" type="tel"/>
+     <p class="field-help">
+      Este número aparecerá como contato nos anúncios que você publicou.
+     </p>
+     <button class="btn primary full" type="submit">
+      Salvar número
+     </button>
+    </form>
+    <hr class="profile-divider"/>
+    <form id="password-form">
+     <h3>
+      Alterar senha
+     </h3>
+     <label for="current-password">
+      Senha atual
+     </label>
+     <input autocomplete="current-password" id="current-password" name="senha_atual" required="" type="password"/>
+     <label for="new-password">
+      Nova senha
+     </label>
+     <input autocomplete="new-password" id="new-password" minlength="8" name="nova_senha" required="" type="password"/>
+     <label for="confirm-password">
+      Confirmar nova senha
+     </label>
+     <input autocomplete="new-password" id="confirm-password" minlength="8" name="confirmacao" required="" type="password"/>
+     <button class="btn primary full" type="submit">
+      Alterar senha
+     </button>
+    </form>
+   </section>
+  </div>
+  <div class="modal-backdrop" id="account-edit-modal">
+   <section aria-labelledby="account-edit-title" aria-modal="true" class="modal" role="dialog">
+    <button aria-label="Fechar" class="x" data-close="">
+     ×
+    </button>
+    <h2 id="account-edit-title">
+     Editar conta
+    </h2>
+    <p>
+     Atualize os dados do usuário. A senha não pode ser visualizada aqui.
+    </p>
+    <form id="account-edit-form">
+     <input name="matricula_original" type="hidden"/>
+     <label>
+      Nome completo
+     </label>
+     <input maxlength="120" minlength="3" name="nome" required=""/>
+     <label>
+      Matrícula
+     </label>
+     <input inputmode="numeric" name="matricula" pattern="[0-9]{5,20}" required=""/>
+     <label>
+      WhatsApp com DDD
+     </label>
+     <input name="telefone" required="" type="tel"/>
+     <label>
+      Cargo / Permissão
+     </label>
+     <select name="role" required="">
+      <option value="aluno">
+       Aluno
+      </option>
+      <option value="servidor">
+       Servidor
+      </option>
+     </select>
+     <p class="field-help">
+      Somente contas de aluno e servidor podem ter o cargo alterado. Administradores não podem ser modificados aqui.
+     </p>
+     <button class="btn primary full" type="submit">
+      ✔️ Salvar alterações
+     </button>
+    </form>
+   </section>
+  </div>
+  <div class="modal-backdrop" id="item-modal">
+   <section class="modal wide">
+    <button class="x" data-close="">
+     ×
+    </button>
+    <h2 id="item-modal-title">
+    📢 Anunciar objeto
+    </h2>
+    <p>
+     📑 Informe os detalhes para que a comunidade possa ajudar.
+    </p>
+    <form id="item-form">
+     <div class="form-grid">
+      <div class="field full-field">
+       <label>
+        ✏️ Nome do objeto
+       </label>
+       <input maxlength="120" name="titulo" placeholder="Ex.: Garrafa térmica preta" required=""/>
+      </div>
+      <div class="field">
+       <label>
+        🎲 Tipo de anúncio
+       </label>
+       <select name="tipo" required="">
+        <option value="perdido">
+        ❌ Perdi este objeto
+        </option>
+        <option value="encontrado">
+         ✔️ Encontrei este objeto
+        </option>
+       </select>
+      </div>
+      <div class="field">
+       <label>
+        📥 Categoria
+       </label>
+       <select name="categoria" required="">
+       </select>
+      </div>
+      <div class="field full-field">
+       <label>
+       📍 Local onde foi perdido/encontrado
+       </label>
+       <input name="local" placeholder="Ex.: Biblioteca, bloco de aulas..." required=""/>
+      </div>
+      <div class="field full-field">
+       <label>
+       ✏️ Descrição
+       </label>
+       <textarea name="descricao" placeholder="Descreva características que ajudem a identificar o objeto" required="" rows="3"></textarea>
+      </div>
+      <div class="field full-field">
+       <label>
+        🧷 Foto do objeto (JPG, PNG ou WebP, até 5 MB)
+       </label>
+       <input accept="image/jpeg,image/png,image/webp" name="foto" type="file"/>
+       <p class="field-help">
+       🧷 Escolha uma foto da galeria ou tire uma foto com o celular.
+       </p>
+      </div>
+     </div>
+     <button class="btn primary full" type="submit">
+      🚀 Publicar anúncio
+     </button>
+    </form>
+   </section>
+  </div>
+  <div class="modal-backdrop" id="edit-modal">
+   <section class="modal wide">
+    <button class="x" data-close="">
+     ×
+    </button>
+    <h2>
+     ⚙️ Editar anúncio
+    </h2>
+    <form id="edit-form">
+     <input name="id" type="hidden"/>
+     <div class="form-grid">
+      <div class="field full-field">
+       <label>
+        ✏️ Nome do objeto
+       </label>
+       <input name="titulo" required=""/>
+      </div>
+      <div class="field">
+       <label>
+        🎲 Tipo
+       </label>
+       <select name="tipo">
+        <option value="perdido">
+         ❌ Perdido
+        </option>
+        <option value="encontrado">
+         ✔️ Encontrado
+        </option>
+       </select>
+      </div>
+      <div class="field">
+       <label>
+       📥 Categoria
+       </label>
+       <select name="categoria" required="">
+       </select>
+      </div>
+      <div class="field full-field">
+       <label>
+        📍 Local
+       </label>
+       <input name="local" required=""/>
+      </div>
+      <div class="field full-field">
+       <label>
+        🗯️ Descrição
+       </label>
+       <textarea name="descricao" required="" rows="3"></textarea>
+      </div>
+      <div class="field">
+       <label>
+        ⛔ Situação
+       </label>
+       <select name="status">
+        <option value="aberto">
+         🔓 Em aberto
+        </option>
+        <option value="entregue">
+         ✔️ Entregue ao dono
+        </option>
+       </select>
+      </div>
+      <div class="field">
+       <label>
+        Substituir foto (opcional)
+       </label>
+       <input accept="image/jpeg,image/png,image/webp" name="foto" type="file"/>
+       <p class="field-help">
+        Se não selecionar uma foto, a imagem atual será mantida.
+       </p>
+      </div>
+     </div>
+     <button class="btn primary full" type="submit">
+      Salvar alterações
+     </button>
+    </form>
+   </section>
+  </div>
+  <div class="modal-backdrop" id="details-modal">
+   <section aria-labelledby="details-title" aria-modal="true" class="modal details-modal" role="dialog">
+    <button aria-label="Fechar detalhes" class="x" data-close="">
+     ×
+    </button>
+    <div id="details-content">
+    </div>
+    <button class="btn outline full" data-close="" type="button">
+     Fechar detalhes
+    </button>
+   </section>
+  </div>
+  <div aria-describedby="result-message" aria-labelledby="result-title" aria-modal="true" class="modal-backdrop result-backdrop" id="result-modal" role="dialog">
+   <section class="result-dialog">
+    <div aria-hidden="true" class="result-icon result-success" id="result-icon">
+     ✓
+    </div>
+    <h2 id="result-title">
+     Sucesso!
+    </h2>
+    <p id="result-message">
+    </p>
+    <button class="result-ok" id="result-ok" type="button">
+     OK
+    </button>
+   </section>
+
+  </div>
+  <div class="toast" id="toast">
+  </div>
+
+  <script src="/app.js">
+  </script>
+ </body>
+</html>
